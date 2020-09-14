@@ -86,7 +86,27 @@ CREATE TABLE song(
 );
 INSERT INTO song(title, album_id,artist_id,youtube_link,duration, track_number)
 VALUES ('Grave Digger', 1,1,'https://www.youtube.com/watch?v=ImyqYYSSQIU&ab_channel=MattMaeson',238,1),
-	('Cringe', 1,1,'https://www.youtube.com/watch?v=eoJtlPQzqkQ&ab_channel=MattMaeson',225,2);
+	('Cringe', 1,1,'https://www.youtube.com/watch?v=eoJtlPQzqkQ&ab_channel=MattMaeson',225,2),
+    ('Aura', 2,2,'https://www.youtube.com/watch?v=1bGI3fwz40c&ab_channel=DennisLloyd',179,1),
+    ('Off The Radar', 3,3,'https://www.youtube.com/watch?v=7Z6DwZtv0Gg&ab_channel=NogaErez',187,2),
+    ('100 Bad Days', 4,4,'https://www.youtube.com/watch?v=2c4dB52ehAE&list=OLAK5uy_mT1HbwC8-HK-eugVqdrNHrb2tGZ2LdiuE&ab_channel=AJR',213,4),
+    ('The Entertainment\'s Here', 4,4,'https://www.youtube.com/watch?v=wEyyQl1W5wc&list=OLAK5uy_mT1HbwC8-HK-eugVqdrNHrb2tGZ2LdiuE&ab_channel=AJR',187,7),
+    ('Whatever It Takes', 5,5,'https://www.youtube.com/watch?v=gOsM-DYAEhY&list=OLAK5uy_lnx0vO7zWw_AcGVVHsaDvsowsRQiIjBMk&ab_channel=ImagineDragonsVEVO',219,3),
+    ('Flashed Junk Mind', 6,6,'https://www.youtube.com/watch?v=r8BsuT0PWdI&list=OLAK5uy_kgosQpTXVWwN8flaHQoLfMVGBPK5LZbus&ab_channel=MilkyChanceOfficial',238,7),
+    ('Circles', 7,7,'https://www.youtube.com/watch?v=wXhTHyIgQ_U&list=OLAK5uy_mX9d9zsFckvzZEXQtDpdjnMdeZJrV9Wnc&ab_channel=PostMaloneVEVO',226,5),
+    ('Giant Heart', 8,8,'https://www.youtube.com/watch?v=uBqBVldMbeg&list=OLAK5uy_kEHpaBYrzYu4mDJlwLtvypg-lVzd2tpxk&ab_channel=theAngelcy',141,3),
+    ('Good People', 9,9,'https://www.youtube.com/watch?v=2f2iB3KJaNY&list=OLAK5uy_mfyXzaXsS_Wa5OpNzOx8pBwCqoC4_Z58g&ab_channel=JackJohnson-Topic',208,1),
+    ('Mr. Brightside', 10,10,'https://www.youtube.com/watch?v=gGdGFtwCNBE&list=OLAK5uy_n4jY0HET6vSBhzpxy5mFmlIRPSfIowmuk&ab_channel=TheKillersVEVO',227,1),
+    ('Time For Us To Move', 11,11,'https://www.youtube.com/watch?v=o_xVBftrvy8&list=OLAK5uy_k6oyJCZTK5qLJligiQk_-K9-ReVYYxnOE&ab_channel=FullTrunk',226,4),
+    ('Only For A Moment', 12,12,'https://www.youtube.com/watch?v=zN5Id6_P-Qk&list=OLAK5uy_n99kqCUI3zYyV1o4-UVTPJ4N_xaTj3ICw&ab_channel=LolaMarshVEVO',183,2),
+    ('Godzilla ', 13,13,'https://www.youtube.com/watch?v=r_0JjYUe5jo&list=OLAK5uy_nyPpHefgBGBt_CgAaqT3PV6BLxh_tU59s&ab_channel=LyricalLemonade',266,5),
+    ('still feel', 14,14,'https://www.youtube.com/watch?v=KOOhPfMbuIQ&ab_channel=half%E2%80%A2alive',255,1),
+    ('Babel', 15,15,'https://www.youtube.com/watch?v=iWza_On7ajs&ab_channel=MumfordAndSonsVEVO',244,1),
+    ('Talk Is Cheap', 16,16,'https://www.youtube.com/watch?v=aP_-P_BS6KY&list=OLAK5uy_njjvX42RPPYl6ofSSiD8kRjvZoNRoQ5Ak&ab_channel=FutureClassic',219,1),
+    ('Prone', 17,17,'https://www.youtube.com/watch?v=UI-BnJEzyDM&list=OLAK5uy_ke-vkzgcbXMfqsYiG88yDO1OYIl9g9IrA&ab_channel=Masego',186,7),
+    ('Old Yellow Bricks', 18,18,'https://www.youtube.com/watch?v=NgLWF2XJyKA&list=OLAK5uy_lr58vhu2hVzMR7o-MBIh-rQERFly0UIuk&index=12&t=0s&ab_channel=ArcticMonkeys-Topic',193,11),
+    ('505', 19,19,'https://www.youtube.com/watch?v=qU9mHegkTc4&list=OLAK5uy_lr58vhu2hVzMR7o-MBIh-rQERFly0UIuk&index=13&t=0s&ab_channel=ArcticMonkeys-Topic',253,12),
+    ('I\'m So Humble Scene', 20,20,'https://www.youtube.com/watch?v=KzUKcXxbU4U&ab_channel=Movieclips',134,1);
 
 CREATE TABLE playlist(
 	id INT NOT NULL AUTO_INCREMENT,
