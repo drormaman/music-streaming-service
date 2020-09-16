@@ -21,7 +21,7 @@ db.connect((err) => {
 // a GET request to /top_songs/ returns a list of top 20 songs
 app.get("/top_songs", (req, res) => {
   const query = `SELECT * FROM song LIMIT 20`;
-  db.query(query, (err, result) => {
+  db.query(query, (error, result) => {
     if (error) console.log(error);
     res.send(result);
   });
@@ -29,7 +29,7 @@ app.get("/top_songs", (req, res) => {
 
 app.get("/top_artists", (req, res) => {
   const query = `SELECT * FROM artist LIMIT 20`;
-  db.query(query, (err, result) => {
+  db.query(query, (error, result) => {
     if (error) console.log(error);
     res.send(result);
   });
@@ -37,7 +37,7 @@ app.get("/top_artists", (req, res) => {
 // a GET request to /top_albums/ returns a list of top 20 albums
 app.get("/top_albums", (req, res) => {
   const query = `SELECT * FROM album LIMIT 20`;
-  db.query(query, (err, result) => {
+  db.query(query, (error, result) => {
     if (error) console.log(error);
     res.send(result);
   });
@@ -45,7 +45,7 @@ app.get("/top_albums", (req, res) => {
 // a GET request to /top_playlist/ returns a list of top 20 playlist
 app.get("/top_playlists", (req, res) => {
   const query = `SELECT * FROM playlist LIMIT 20`;
-  db.query(query, (err, result) => {
+  db.query(query, (error, result) => {
     if (error) console.log(error);
     res.send(result);
   });
@@ -73,7 +73,7 @@ app.get("/song/:id", (req, res) => {
     `SELECT * FROM song WHERE id = ${req.params.id}`,
     (error, result) => {
       if (error) console.log(error);
-      res.send(result);
+      res.send(result[0]);
     }
   );
 });
@@ -83,7 +83,7 @@ app.get("/artist/:id", (req, res) => {
     `SELECT * FROM artist WHERE id = ${req.params.id}`,
     (error, result) => {
       if (error) console.log(error);
-      res.send(result);
+      res.send(result[0]);
     }
   );
 });
@@ -93,7 +93,7 @@ app.get("/album/:id", (req, res) => {
     `SELECT * FROM album WHERE id = ${req.params.id}`,
     (error, result) => {
       if (error) console.log(error);
-      res.send(result);
+      res.send(result[0]);
     }
   );
 });
@@ -103,7 +103,7 @@ app.get("/playlist/:id", (req, res) => {
     `SELECT * FROM playlist WHERE id = ${req.params.id}`,
     (error, result) => {
       if (error) console.log(error);
-      res.send(result);
+      res.send(result[0]);
     }
   );
 });
@@ -245,4 +245,4 @@ app.delete("/playlist/:id", (req, res) => {
   );
 });
 
-app.listen(3000, () => console.log("server listenning"));
+app.listen(8080, () => console.log("server listenning"));
