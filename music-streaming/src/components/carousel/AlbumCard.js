@@ -9,22 +9,15 @@ const StyledCard = styled.li`
   text-align: center;
 `;
 
-const ArtistsSongImage = styled.img`
+const AlbumImage = styled.img`
   width: 130px;
   height: 130px;
   border-radius: 5px;
   object-fit: cover;
 `;
 
-function SongCard(props) {
+function AlbumCard(props) {
   const [artist, setArtist] = useState({});
-
-  //   async function fetchArtist() {
-  //     const artistResult = await fetch(`artist/${props.data.artist_id}`);
-  //     const artistObj = await artistResult.json();
-  //     setArtist(artistObj);
-  //   }
-  //   useEffect(() => fetchArtist(), []);
 
   useEffect(() => {
     (async () => {
@@ -36,15 +29,15 @@ function SongCard(props) {
 
   return (
     <StyledCard key={props.data.id}>
-      <ArtistsSongImage
-        src={artist.cover_img}
+      <AlbumImage
+        src={props.data.cover_img}
         className="carousel-img"
-        alt="artist image"
+        alt="album image"
       />
-      <h4 className="card-title">{props.data.title}</h4>
+      <h4 className="card-title">{props.data.name}</h4>
       <span className="song-artist">{artist.name}</span>
     </StyledCard>
   );
 }
 
-export default SongCard;
+export default AlbumCard;

@@ -2,29 +2,6 @@
   border: 1px solid black;
   position: relative;
 }
-.carousel-ul {
-  width: 100%;
-  height: 200px;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-  justify-content: space-evenly;
-  list-style: none;
-}
-
-.carousel-ul li {
-  width: 150px;
-  background-color: blanchedalmond;
-  padding: 16px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.carousel-img {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;
-}
 
 .left-arrow {
   position: absolute;
@@ -38,10 +15,30 @@
   top: 100px;
 }
 
-.song-title {
+.card-title {
   margin: 0;
 }
 
 .song-artist {
   margin: 0;
+}
+
+.slide-enter {
+  opacity: 0.01;
+  transform: translate(0px, 0px);
+}
+.slide-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 500ms ease-in;
+}
+.slide-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.slide-exit-active {
+  opacity: 0.01;
+  transform: translate(0px, 0px);
+  transition: all 300ms ease-in;
+  display: none;
 }
