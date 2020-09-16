@@ -6,7 +6,7 @@ import SongCard from "./SongCard";
 function Carousel(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
-  const numberOfItemsInRow = Math.floor((windowWidth - 100) / 200);
+  const numberOfItemsInRow = Math.floor(windowWidth / 190);
   console.log(windowWidth);
 
   useEffect(() => {
@@ -33,21 +33,16 @@ function Carousel(props) {
   }
 
   return (
-    <div>
-      <ul
-        className="carousel-ul"
-        style={{
-          gridTemplateColumns: `50px repeat(${numberOfItemsInRow}, minmax(175px, 1fr)) 50px`,
-        }}
-      >
-        <LeftArrow click={leftArrowClick} />
+    <div className="carousel-row">
+      <LeftArrow click={leftArrowClick} />
+      <ul className="carousel-ul">
         {props.data
           .slice(currentIndex, currentIndex + numberOfItemsInRow)
           .map((item) => {
             return <SongCard data={item} />;
           })}
-        <RightArrow click={rightArrowClick} />
       </ul>
+      <RightArrow click={rightArrowClick} />
     </div>
   );
 }

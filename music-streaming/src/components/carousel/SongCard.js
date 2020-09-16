@@ -23,17 +23,9 @@ function SongCard(props) {
   useEffect(() => console.log(window.innerWidth), [window.innerWidth]);
   return (
     <li key={props.data.id}>
-      <div className="song-details">
-        <img
-          src={artist.cover_img}
-          className="carousel-img"
-          alt="artist image"
-        />
-        <figcaption>
-          <h4>{props.data.title}</h4>
-          <span>{artist.name}</span>
-        </figcaption>
-      </div>
+      <img src={artist.cover_img} className="carousel-img" alt="artist image" />
+      <h4 className="song-title">{props.data.title}</h4>
+      <span className="song-artist">{artist.name}</span>
     </li>
   );
 }

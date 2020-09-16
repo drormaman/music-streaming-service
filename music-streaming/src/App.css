@@ -1,27 +1,47 @@
+.carousel-row {
+  border: 1px solid black;
+  position: relative;
+}
 .carousel-ul {
+  width: 100%;
+  height: 200px;
+  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-
-  column-gap: 20px;
-  /* display: flex;
-  overflow: hidden; */
+  display: inline-flex;
+  justify-content: space-evenly;
   list-style: none;
 }
-.carousel-ul li {
-  background-color: aqua;
-}
 
-.song-details {
+.carousel-ul li {
+  width: 150px;
   background-color: blanchedalmond;
-  margin: 16px;
-  border-radius: 5px;
+  padding: 16px;
+  border-radius: 10px;
   text-align: center;
 }
 
 .carousel-img {
-  width: 85%;
-  height: 150px;
-
+  width: 130px;
+  height: 130px;
   object-fit: cover;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+
+.song-title {
+  margin: 0;
+}
+
+.song-artist {
+  margin: 0;
 }
