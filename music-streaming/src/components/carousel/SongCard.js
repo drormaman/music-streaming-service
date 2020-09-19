@@ -33,7 +33,7 @@ function SongCard(props) {
 			const artistObj = await artistResult.json();
 			setArtist(artistObj);
 		})();
-	}, [props.data]);
+	}, []);
 
 	return (
 		<StyledCard key={props.data.id}>

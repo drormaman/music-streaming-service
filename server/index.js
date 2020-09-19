@@ -84,6 +84,16 @@ app.get("/song/:id", (req, res) => {
 		}
 	);
 });
+// return songs of specified artist
+app.get("/artist/:id/songs", (req, res) => {
+	db.query(
+		`SELECT id, title, album_id, artist_id ,duration FROM song WHERE artist_id = ${req.params.id}`,
+		(error, result) => {
+			if (error) console.log(error);
+			res.send(result);
+		}
+	);
+});
 // a GET request to /artist/123 returns the artist 123
 app.get("/artist/:id", (req, res) => {
 	db.query(
@@ -94,6 +104,17 @@ app.get("/artist/:id", (req, res) => {
 		}
 	);
 });
+// return songs in specified album
+app.get("/album/:id/songs", (req, res) => {
+	db.query(
+		`SELECT id, title, album_id, artist_id ,duration FROM song WHERE album_id = ${req.params.id}`,
+		(error, result) => {
+			if (error) console.log(error);
+			res.send(result);
+		}
+	);
+});
+
 // a GET request to /album/123 returns the album 123
 app.get("/album/:id", (req, res) => {
 	db.query(

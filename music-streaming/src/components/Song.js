@@ -25,13 +25,21 @@ const NewDiv = styled.div`
 
 function Song(props) {
 	const [song, setSong] = useState({});
+	const [relatedSongs, setRelatesSongs] = useState([]);
 
-	useEffect(() => fetchSong(), []);
+	useEffect(() => {
+		fetchData();
+	}, []);
 
-	async function fetchSong() {
+	async function fetchData() {
 		const data = await fetch(`/song/${props.match.params.id}`);
 		const songObj = await data.json();
 		setSong(songObj);
+
+		const queryArr = props.location.search.slice(1).split("=");
+		const relatedData = await fetch(`/${queryArr[0]}/${queryArr[1]}/songs`);
+		const relatedSongsArr = await relatedData.json();
+		setRelatesSongs(relatedSongsArr);
 	}
 	return (
 		<PlayerMainDiv>
@@ -49,25 +57,11 @@ function Song(props) {
 				/>
 			</NewDiv>
 			<RelatedList>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
-				<li>1fsdlkfjsalkjfl;asjfl;ks</li>
+				{relatedSongs
+					.filter(({ title }) => title !== song.title)
+					.map(song => (
+						<li key={song.id}>{song.title}</li>
+					))}
 			</RelatedList>
 		</PlayerMainDiv>
 	);

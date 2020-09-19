@@ -20,11 +20,7 @@ function PlaylistCard(props) {
 	return (
 		<StyledCard key={props.data.id}>
 			<Link to={`/playlist/${props.data.id}`}>
-				<PlaylistImg
-					src={props.data.cover_img}
-					// className="carousel-img"
-					alt="artist image"
-				/>
+				<PlaylistImg src={props.data.cover_img} alt="artist image" />
 				<h4 className="card-title">{props.data.name}</h4>
 			</Link>
 		</StyledCard>
