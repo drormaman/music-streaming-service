@@ -6,13 +6,14 @@ const StyledCard = styled.li`
 	width: 150px;
 	background-color: blanchedalmond;
 	padding: 16px;
+	margin-left: 16px;
 	border-radius: 10px;
 	text-align: center;
 `;
 
 const AlbumImage = styled.img`
-	width: 130px;
-	height: 130px;
+	width: 150px;
+	height: 150px;
 	border-radius: 5px;
 	object-fit: cover;
 `;

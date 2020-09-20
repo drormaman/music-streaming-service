@@ -7,6 +7,7 @@ const StyledCard = styled.li`
 	padding: 16px;
 	border-radius: 10px;
 	text-align: center;
+	margin-left: 16px;
 `;
 
 const ArtistImg = styled.img`

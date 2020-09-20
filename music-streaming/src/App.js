@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Playlist from "./components/Playlist";
 import Album from "./components/Album";
 import Song from "./components/Song";
-import Artist from "./components/Artist";
+import Artist from "./components/ArtistPage";
 
 function App() {
 	return (

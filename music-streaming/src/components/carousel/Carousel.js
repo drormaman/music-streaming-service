@@ -14,7 +14,6 @@ const styledUl = styled.ul`
 	margin: 0;
 	padding: 0;
 	display: inline-flex;
-	justify-content: space-evenly;
 	list-style: none;
 `;
 

@@ -8,11 +8,12 @@ const StyledCard = styled.li`
 	padding: 16px;
 	border-radius: 10px;
 	text-align: center;
+	margin-left: 16px;
 `;
 
 const ArtistsSongImage = styled.img`
-	width: 130px;
-	height: 130px;
+	width: 150px;
+	height: 150px;
 	border-radius: 5px;
 	object-fit: cover;
 `;
