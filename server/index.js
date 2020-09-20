@@ -94,6 +94,16 @@ app.get("/artist/:id/songs", (req, res) => {
 		}
 	);
 });
+// return albums of specified artist
+app.get("/artist/:id/albums", (req, res) => {
+	db.query(
+		`SELECT id, name, cover_img FROM album WHERE artist_id = ${req.params.id}`,
+		(error, result) => {
+			if (error) console.log(error);
+			res.send(result);
+		}
+	);
+});
 // a GET request to /artist/123 returns the artist 123
 app.get("/artist/:id", (req, res) => {
 	db.query(

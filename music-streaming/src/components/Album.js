@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SongInList from "./SongInList";
 import PlaylistHeader from "./PlaylistHeader";
-import ArtistCard from "./carousel/ArtistCard";
 
 const SongsList = styled.ul`
 	padding: 0;
@@ -20,6 +19,7 @@ function Album(props) {
 	useEffect(() => {
 		fetchData();
 	}, []);
+
 	useEffect(() => {
 		(async () => {
 			const artistResponse = await fetch(`/artist/${props.match.params.id}`);
