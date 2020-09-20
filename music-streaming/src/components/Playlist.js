@@ -2,35 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SongInList from "./SongInList";
-import { FaPlay } from "react-icons/fa";
-
-const PlaylistImage = styled.img`
-	width: 200px;
-	height: 200px;
-	border-radius: 4px;
-	object-fit: cover;
-`;
-
-const Header = styled.header`
-	background-color: #1d1d1d;
-	height: 270px;
-	display: flex;
-	align-items: center;
-	padding: 0 10%;
-`;
-
-const PlayBtn = styled.button`
-	border: none;
-	outline: none;
-	width: 100px;
-	height: 36px;
-	margin-top: auto;
-	background-color: #fff;
-	border-radius: 4px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
+import PlaylistHeader from "./PlaylistHeader";
 
 const SongsList = styled.ul`
 	padding: 0;
@@ -58,42 +30,20 @@ function Playlist(props) {
 		setSongs(songsData);
 	}
 
-	function timeToString(time) {
-		const date = new Date(Date.parse(time));
-		return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
-	}
-	console.log(songs[0]);
 	return (
 		<main>
-			<Header>
-				<PlaylistImage src={playlist.cover_img} alt="playlist image" />
-				<div
-					style={{
-						paddingLeft: "36px",
-						height: "200px",
-						display: "flex",
-						flexDirection: "column"
-					}}>
-					<h2 style={{ color: "#fff", margin: "10px 0" }}>{playlist.name}</h2>
-					<p style={{ color: "#aaaaaa", margin: 0 }}>
-						Created at: {timeToString(playlist.created_at)}
-					</p>
-					<PlayBtn>
-						<Link
-							to={`/song/${songs[0] ? songs[0].id : undefined}?playlist=${
-								playlist.id
-							}`}>
-							<FaPlay style={{ paddingRight: "6px" }} />
-							Play
-						</Link>
-					</PlayBtn>
-				</div>
-			</Header>
+			<PlaylistHeader data={playlist} type="playlist" songs={songs} />
+
 			<SongsList>
-				{songs.map(song => {
+				{songs.map((song, i) => {
 					return (
 						<Link to={`/song/${song.id}?playlist=${playlist.id}`}>
-							<SongInList key={song.id} song={song} />
+							<SongInList
+								key={song.id}
+								song={song}
+								index={i + 1}
+								type="playlist"
+							/>
 						</Link>
 					);
 				})}

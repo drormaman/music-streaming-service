@@ -107,7 +107,7 @@ app.get("/artist/:id", (req, res) => {
 // return songs in specified album
 app.get("/album/:id/songs", (req, res) => {
 	db.query(
-		`SELECT id, title, album_id, artist_id ,duration FROM song WHERE album_id = ${req.params.id}`,
+		`SELECT id, title, album_id, artist_id ,duration, track_number FROM song WHERE album_id = ${req.params.id} ORDER BY track_number`,
 		(error, result) => {
 			if (error) console.log(error);
 			res.send(result);

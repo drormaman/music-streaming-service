@@ -30,6 +30,7 @@ function SongInList(props) {
 
 	return (
 		<SongRow>
+			<span style={{ width: "30px" }}>{props.index}</span>
 			<span
 				style={{
 					width: "200px",
