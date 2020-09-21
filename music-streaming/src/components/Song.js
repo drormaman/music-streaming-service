@@ -67,12 +67,10 @@ function Song(props) {
 	async function fetchData() {
 		const songResponse = await fetch(`/song/${props.match.params.id}`);
 		const songData = await songResponse.json();
-		console.log(songData);
 		setSong(songData);
 
 		const relatedData = await fetch(`/${queryArr[0]}/${queryArr[1]}/songs`);
 		const relatedSongsArr = await relatedData.json();
-		console.log(relatedSongsArr);
 		setRelatesSongs(relatedSongsArr);
 		setIndex(relatedSongsArr.findIndex(song => song.id === songData.id));
 	}
@@ -90,7 +88,6 @@ function Song(props) {
 				style={{ gridColumn: "1", gridRow: "1/3" }}
 				videoId={song.youtube_link}
 				onEnd={() => {
-					console.log("on end", index);
 					if (index + 1 === relatedSongs.length) {
 						props.history.push("/");
 					} else {

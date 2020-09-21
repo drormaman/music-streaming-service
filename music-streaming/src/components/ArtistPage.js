@@ -54,7 +54,6 @@ function Artist(props) {
 		const albumsData = await albumsResponse.json();
 		setAlbums(albumsData);
 	}
-	console.log(albums);
 
 	return (
 		<main>

@@ -24,7 +24,6 @@ function Album(props) {
 		setSongs(songsData);
 	}
 
-	console.log(album);
 	return (
 		<main>
 			<PlaylistHeader

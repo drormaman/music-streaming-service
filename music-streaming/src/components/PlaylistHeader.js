@@ -43,7 +43,6 @@ function PlaylistHeader(props) {
 		const date = new Date(Date.parse(time));
 		return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
 	}
-	console.log(props.type);
 
 	return (
 		<Header>

@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
-const faker = require("faker");
-const solenolyrics = require("solenolyrics");
 
 app.use(express.json());
 //create connection
