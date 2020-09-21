@@ -6,6 +6,7 @@ body {
 	border: 1px solid black;
 	position: relative;
 }
+
 a {
 	text-decoration: none;
 	color: black;
@@ -21,14 +22,6 @@ a {
 	position: absolute;
 	right: 20px;
 	top: 100px;
-}
-
-.card-title {
-	margin: 0;
-}
-
-.song-artist {
-	margin: 0;
 }
 
 .slide-enter {
@@ -52,4 +45,44 @@ a {
 	transform: translate(0px, 0px);
 	transition: all 300ms ease-in;
 	display: none;
+}
+
+
+.cardBackground {
+	width: 120px;
+	height: 170px;
+	background-color: #282828;
+	padding: 12px;
+	border-radius: 10px;
+	text-align: left;
+	margin-left: 16px;
+	font-size: 0.8em;
+
+
+}
+
+.cardBackground:hover {
+	box-shadow: 0 0 10px 0px rgba(200, 200, 200, 0.8);
+}
+
+.cardImage-rect {
+	width: 120px;
+	height: 120px;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+.cardTitle-rect {
+	margin: 4px 0;
+	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cardSub-rect {
+	color: #aeaeae;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

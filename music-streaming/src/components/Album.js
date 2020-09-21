@@ -14,20 +14,7 @@ const SongsList = styled.ul`
 function Album(props) {
 	const [album, setAlbum] = useState({});
 	const [songs, setSongs] = useState([]);
-	const [artist, setArtist] = useState({});
-
-	useEffect(() => {
-		fetchData();
-	}, []);
-
-	useEffect(() => {
-		(async () => {
-			const artistResponse = await fetch(`/artist/${props.match.params.id}`);
-			const artistData = await artistResponse.json();
-			setArtist(artistData);
-		})();
-	}, [album]);
-
+	useEffect(() => fetchData(), []);
 	async function fetchData() {
 		const albumResponse = await fetch(`/album/${props.match.params.id}`);
 		const albumData = await albumResponse.json();
@@ -37,9 +24,15 @@ function Album(props) {
 		setSongs(songsData);
 	}
 
+	console.log(album);
 	return (
 		<main>
-			<PlaylistHeader data={album} type="album" songs={songs} artist={artist} />
+			<PlaylistHeader
+				data={album}
+				type="album"
+				songs={songs}
+				artist={{ name: album.artistName, image: album.artistImage }}
+			/>
 
 			<SongsList>
 				{songs.map(song => {

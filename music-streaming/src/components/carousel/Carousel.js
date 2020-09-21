@@ -20,7 +20,7 @@ const styledUl = styled.ul`
 function Carousel(props) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [windowWidth, setWindowWidth] = useState(0);
-	const numberOfItemsInRow = Math.floor(windowWidth / 190);
+	const numberOfItemsInRow = Math.floor(windowWidth / 140);
 
 	useEffect(() => {
 		setWindowWidth(window.innerWidth);

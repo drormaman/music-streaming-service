@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "./carousel/Carousel";
+import styled from "styled-components";
+
+const Title = styled.h2`
+	color: white;
+	margin-left: 48px;
+`;
 
 function Home() {
 	const [songs, setSongs] = useState([]);
@@ -39,9 +45,13 @@ function Home() {
 	}
 	return (
 		<div id="home">
+			<Title>Top Songs</Title>
 			<Carousel data={songs} type="songs" />
+			<Title>Top Artists</Title>
 			<Carousel data={artists} type="artists" />
+			<Title>Top Albums</Title>
 			<Carousel data={albums} type="albums" />
+			<Title>Top playlists</Title>
 			<Carousel data={playlists} type="playlists" />
 		</div>
 	);

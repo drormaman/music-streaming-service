@@ -60,7 +60,7 @@ function PlaylistHeader(props) {
 					<span>Created at: {timeToString(props.data.created_at)}</span>
 				) : (
 					<>
-						<ArtistImage src={props.artist.cover_img} />
+						<ArtistImage src={props.artist.image} />
 						<span>{props.artist.name}</span>
 					</>
 				)}

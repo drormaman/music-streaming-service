@@ -27,7 +27,10 @@ db.connect(err => {
 // GET TOP 20 OF:
 // a GET request to /top_songs/ returns a list of top 20 songs
 app.get("/top_songs", (req, res) => {
-	const query = `SELECT * FROM song LIMIT 20`;
+	const query = `SELECT song.*, album.name as albumName , album.cover_img as albumCover, artist.name as artistName, artist.cover_img as artistImage FROM song 
+	join album on song.album_id = album.id 
+	join artist on song.artist_id = artist.id
+	 LIMIT 20`;
 	db.query(query, (error, result) => {
 		if (error) console.log(error);
 		res.send(result);
@@ -43,7 +46,10 @@ app.get("/top_artists", (req, res) => {
 });
 // a GET request to /top_albums/ returns a list of top 20 albums
 app.get("/top_albums", (req, res) => {
-	const query = `SELECT * FROM album LIMIT 20`;
+	const query = `
+	SELECT album.*, artist.name as artistName, artist.cover_img as artistImage FROM album
+		JOIN artist ON album.artist_id = artist.id
+		 LIMIT 20`;
 	db.query(query, (error, result) => {
 		if (error) console.log(error);
 		res.send(result);
@@ -77,7 +83,10 @@ app.get("/top_playlists", (req, res) => {
 // a GET request to /song/123 returns the details of song 123
 app.get("/song/:id", (req, res) => {
 	db.query(
-		`SELECT * FROM song WHERE id = ${req.params.id}`,
+		`SELECT song.*, album.name as albumName , album.cover_img as albumCover, artist.name as artistName, artist.cover_img as artistImage FROM song 
+		join album on song.album_id = album.id 
+		join artist on song.artist_id = artist.id
+		where song.id = ${req.params.id}`,
 		(error, result) => {
 			if (error) console.log(error);
 			res.send(result[0]);
@@ -87,7 +96,10 @@ app.get("/song/:id", (req, res) => {
 // return songs of specified artist
 app.get("/artist/:id/songs", (req, res) => {
 	db.query(
-		`SELECT id, title, album_id, artist_id ,duration FROM song WHERE artist_id = ${req.params.id}`,
+		`SELECT song.*, album.name as albumName , album.cover_img as albumCover, artist.name as artistName, artist.cover_img as artistImage FROM song 
+		join album on song.album_id = album.id 
+		join artist on song.artist_id = artist.id
+		WHERE song.artist_id = ${req.params.id}`,
 		(error, result) => {
 			if (error) console.log(error);
 			res.send(result);
@@ -117,7 +129,10 @@ app.get("/artist/:id", (req, res) => {
 // return songs in specified album
 app.get("/album/:id/songs", (req, res) => {
 	db.query(
-		`SELECT id, title, album_id, artist_id ,duration, track_number FROM song WHERE album_id = ${req.params.id} ORDER BY track_number`,
+		`SELECT song.*, album.name as albumName , album.cover_img as albumCover, artist.name as artistName, artist.cover_img as artistImage FROM song 
+		join album on song.album_id = album.id 
+		join artist on song.artist_id = artist.id
+		 WHERE song.album_id = ${req.params.id} ORDER BY track_number`,
 		(error, result) => {
 			if (error) console.log(error);
 			res.send(result);
@@ -128,7 +143,9 @@ app.get("/album/:id/songs", (req, res) => {
 // a GET request to /album/123 returns the album 123
 app.get("/album/:id", (req, res) => {
 	db.query(
-		`SELECT * FROM album WHERE id = ${req.params.id}`,
+		`SELECT album.*, artist.name as artistName, artist.cover_img as artistImage FROM album
+		JOIN artist ON album.artist_id = artist.id
+		WHERE album.id = ${req.params.id}`,
 		(error, result) => {
 			if (error) console.log(error);
 			res.send(result[0]);
@@ -139,7 +156,10 @@ app.get("/album/:id", (req, res) => {
 // return songs in specified playlist
 app.get("/playlist/:id/songs", (req, res) => {
 	db.query(
-		`SELECT song.id, title, album_id, artist_id,duration FROM songs_in_playlist join song on song_id = song.id
+		`SELECT song.*, album.name as albumName , album.cover_img as albumCover, artist.name as artistName, artist.cover_img as artistImage FROM songs_in_playlist 
+		join song on songs_in_playlist.song_id = song.id
+		join album on song.album_id = album.id 
+		join artist on song.artist_id = artist.id
 		where playlist_id = ${req.params.id}`,
 		(error, result) => {
 			if (error) console.log(error);
