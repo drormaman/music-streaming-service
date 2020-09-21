@@ -8,6 +8,7 @@ import Song from "./components/Song";
 import Artist from "./components/ArtistPage";
 import Page404 from "./components/Page404";
 import styled from "styled-components";
+import { BsMusicNoteBeamed } from "react-icons/bs";
 
 const Navbar = styled.nav`
 	background-color: #333333;
@@ -17,6 +18,13 @@ const Navbar = styled.nav`
 	top: 0;
 	left: 0;
 	z-index: 2;
+	display: flex;
+	padding-left: 36px;
+`;
+const HomeLink = styled.span`
+	color: white;
+	line-height: 40px;
+	font-weight: 500;
 `;
 
 function App() {
@@ -24,7 +32,12 @@ function App() {
 		<div id="app">
 			<BrowserRouter>
 				<Navbar>
-					<Link to="/">Home</Link>
+					<Link to="/">
+						<HomeLink>
+							<BsMusicNoteBeamed />
+							{"  "} Home
+						</HomeLink>
+					</Link>
 				</Navbar>
 				<Switch>
 					<Route path="/" exact component={Home} />

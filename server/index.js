@@ -58,21 +58,6 @@ app.get("/top_playlists", (req, res) => {
 	});
 });
 
-// TODO LATER => SHOW AND ORDER BY LIKES/VIEWS
-// a GET request to /top_songs/ returns a list of top 20 songs
-// app.get("/top_songs", (req, res) => {
-//   const query = `SELECT title FROM song
-//                 join (select song_id from interactions
-//                       group by song_id
-//                       order by count(is_liked) desc
-//                       limit 20) as song_id
-//                 on id = song_id`;
-//   db.query(query, (err, result) => {
-//     if(error) console.log(error);
-//     res.send(result);
-//   });
-// });
-
 // GET SPECIFIED ITEM
 // a GET request to /song/123 returns the details of song 123
 app.get("/song/:id", (req, res) => {
