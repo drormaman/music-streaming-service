@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import RightArrow from "./RightArrow";
-import LeftArrow from "./LeftArrow";
 import SongCard from "./SongCard";
 import ArtistCard from "./ArtistCard";
 import AlbumCard from "./AlbumCard";
 import PlaylistCard from "./PlaylistCard";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const styledUl = styled.ul`
 	width: 100%;
-	height: 200px;
 	margin: 0;
 	padding: 0;
-	display: inline-flex;
+	display: flex;
 	list-style: none;
+`;
+
+const Button = styled.button`
+	position: absolute;
+	${props => (props.left ? "left: 20px;" : "right: 20px;")};
+	top: 50%;
+	z-index: 1;
+	height: 36px;
+	width: 36px;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	background-color: #fff;
+	cursor: pointer;
+	padding: 11px 0;
+
+	&:hover {
+		transform: scale(1.1);
+	}
 `;
 
 function Carousel(props) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [windowWidth, setWindowWidth] = useState(0);
-	const numberOfItemsInRow = Math.floor(windowWidth / 140);
+	const numberOfItemsInRow = Math.floor(windowWidth / 160);
 
 	useEffect(() => {
 		setWindowWidth(window.innerWidth);
@@ -46,8 +63,12 @@ function Carousel(props) {
 	}
 
 	return (
-		<div className="carousel-row">
-			{currentIndex > 0 && <LeftArrow click={leftArrowClick} />}
+		<div style={{ position: "relative" }}>
+			{currentIndex > 0 && (
+				<Button left onClick={leftArrowClick}>
+					<GrLinkPrevious />
+				</Button>
+			)}
 			<TransitionGroup component={styledUl}>
 				{props.data
 					.slice(currentIndex, currentIndex + numberOfItemsInRow)
@@ -75,7 +96,9 @@ function Carousel(props) {
 					})}
 			</TransitionGroup>
 			{currentIndex + numberOfItemsInRow < props.data.length && (
-				<RightArrow click={rightArrowClick} />
+				<Button right onClick={rightArrowClick}>
+					<GrLinkNext />
+				</Button>
 			)}
 		</div>
 	);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function AlbumCard(props) {
 	return (
-		<li className="cardBackground" key={props.data.id}>
+		<li className="cardBackground-rect" key={props.data.id}>
 			<Link to={`/album/${props.data.id}`}>
 				<img
 					className="cardImage-rect"

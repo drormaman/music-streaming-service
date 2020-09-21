@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const SongRow = styled.li`
 	display: flex;
@@ -10,6 +9,7 @@ const SongRow = styled.li`
 	padding: 0 8px;
 	color: #aaa;
 	font-size: ${props => (props.small ? "12px" : "16px")};
+	background-color: ${props => (props.playing ? "#1a1a1a" : "#000")};
 `;
 
 function SongInList(props) {
@@ -20,7 +20,9 @@ function SongInList(props) {
 	}
 
 	return (
-		<SongRow small={props.type === "small" ? true : false}>
+		<SongRow
+			small={props.type === "small" ? true : false}
+			playing={props.isPlaying ? true : false}>
 			<span style={{ width: "30px" }}>{props.index}</span>
 			<span
 				style={{

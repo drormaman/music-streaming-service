@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SongCard(props) {
 	return (
-		<li className="cardBackground" key={props.data.id}>
+		<li className="cardBackground-rect" key={props.data.id}>
 			<Link to={`/song/${props.data.id}?album=${props.data.album_id}`}>
 				<img
 					className="cardImage-rect"

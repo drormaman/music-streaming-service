@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Title = styled.h2`
 	color: white;
-	margin-left: 48px;
+	margin: 12px 0 12px 36px;
 `;
 
 function Home() {
@@ -44,7 +44,7 @@ function Home() {
 		setPlaylists(playlistsArr);
 	}
 	return (
-		<div id="home">
+		<main>
 			<Title>Top Songs</Title>
 			<Carousel data={songs} type="songs" />
 			<Title>Top Artists</Title>
@@ -53,7 +53,7 @@ function Home() {
 			<Carousel data={albums} type="albums" />
 			<Title>Top playlists</Title>
 			<Carousel data={playlists} type="playlists" />
-		</div>
+		</main>
 	);
 }
 

@@ -68,21 +68,14 @@ function Artist(props) {
 				}>
 				<ArtistName>{artist.name}</ArtistName>
 			</Header>
-			<div>
+			<div style={{ paddingLeft: "36px" }}>
 				<h2 style={{ color: "white" }}>top songs</h2>
 				<SongsList>
-					{songs.slice(0, 5).map((song, i) => {
-						return (
-							<Link to={`/song/${song.id}?artist=${artist.id}`}>
-								<SongInList
-									key={song.id}
-									song={song}
-									index={i + 1}
-									type="artist"
-								/>
-							</Link>
-						);
-					})}
+					{songs.slice(0, 5).map((song, i) => (
+						<Link to={`/song/${song.id}?artist=${artist.id}`} key={song.id}>
+							<SongInList song={song} index={i + 1} type="artist" />
+						</Link>
+					))}
 				</SongsList>
 				<h2 style={{ color: "white" }}>albums</h2>
 				<Carousel data={albums} type="albums" />

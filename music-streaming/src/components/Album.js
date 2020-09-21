@@ -35,18 +35,11 @@ function Album(props) {
 			/>
 
 			<SongsList>
-				{songs.map(song => {
-					return (
-						<Link to={`/song/${song.id}?album=${album.id}`}>
-							<SongInList
-								key={song.id}
-								song={song}
-								index={song.track_number}
-								type="album"
-							/>
-						</Link>
-					);
-				})}
+				{songs.map(song => (
+					<Link to={`/song/${song.id}?album=${album.id}`} key={song.id}>
+						<SongInList song={song} index={song.track_number} type="album" />
+					</Link>
+				))}
 			</SongsList>
 		</main>
 	);

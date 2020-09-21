@@ -5,12 +5,6 @@ const mysql = require("mysql");
 const faker = require("faker");
 const solenolyrics = require("solenolyrics");
 
-// async function fetchLyrics(title) {
-// 	var lyrics = await solenolyrics.requestLyricsFor(title);
-// 	console.log(lyrics);
-// }
-// fetchLyrics("cringe");
-
 app.use(express.json());
 //create connection
 const db = mysql.createConnection({
