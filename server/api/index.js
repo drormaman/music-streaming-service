@@ -4,6 +4,6 @@ const router = Router();
 
 // router.use('/songs', require('./song'));
 // router.use('/albums', require('./album'));
-router.use("/artists", require("./artists"));
+router.use("/artist", require("./artist"));
 
 module.exports = router;

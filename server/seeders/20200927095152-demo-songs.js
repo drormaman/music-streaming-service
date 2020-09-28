@@ -17,8 +17,8 @@ module.exports = {
 				{
 					title: "Grave Digger",
 					youtube_link: "ImyqYYSSQIU",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 238,
 					track_number: 1,
 					lyrics: `I can't run to you, father
@@ -63,8 +63,8 @@ module.exports = {
 				{
 					title: "Cringe",
 					youtube_link: "eoJtlPQzqkQ",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 225,
 					track_number: 2,
 					lyrics: `Lover come over
@@ -129,8 +129,8 @@ module.exports = {
 				{
 					title: "Me And My Friends Are Lonely",
 					youtube_link: "UN0aiXcksu0",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 180,
 					track_number: 3,
 					lyrics: `I can't open up to you
@@ -170,8 +170,8 @@ module.exports = {
 				{
 					title: "Straight Razor",
 					youtube_link: "-kujDa4D4EQ",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 262,
 					track_number: 4,
 					lyrics: `Hey Mr. Stargazer
@@ -221,8 +221,8 @@ module.exports = {
 				{
 					title: "Tribulation",
 					youtube_link: "E44rXf8696w",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 203,
 					track_number: 5,
 					lyrics: `Darlin', can't you see
@@ -288,8 +288,8 @@ module.exports = {
 				{
 					title: "Twenty Twelve",
 					youtube_link: "oz8NDZ9ids4",
-					artist_id: 5,
-					album_id: 5,
+					artist_id: 1,
+					album_id: 1,
 					length: 174,
 					track_number: 6,
 					lyrics: `Maybe I'll stay right here
@@ -321,8 +321,8 @@ module.exports = {
 				{
 					title: "Aura",
 					youtube_link: "1bGI3fwz40c",
-					artist_id: 6,
-					album_id: 6,
+					artist_id: 2,
+					album_id: 2,
 					length: 179,
 					track_number: 2,
 					lyrics: `Oh, when we fuck
@@ -368,8 +368,8 @@ module.exports = {
 				{
 					title: "Introducción",
 					youtube_link: "H03pQeneb5M",
-					artist_id: 6,
-					album_id: 6,
+					artist_id: 2,
+					album_id: 2,
 					length: 54,
 					track_number: 1,
 					lyrics: `I remember the time with you
@@ -383,8 +383,8 @@ module.exports = {
 				{
 					title: "Never Go Back",
 					youtube_link: "lhGl9D514Bc",
-					artist_id: 6,
-					album_id: 6,
+					artist_id: 2,
+					album_id: 2,
 					length: 176,
 					track_number: 3,
 					lyrics: `I never go back
@@ -479,8 +479,8 @@ module.exports = {
 				{
 					title: "GFY",
 					youtube_link: "CIqiB9zSLmM",
-					artist_id: 6,
-					album_id: 6,
+					artist_id: 2,
+					album_id: 2,
 					length: 224,
 					track_number: 4,
 					lyrics: `Gotta think about it
@@ -551,8 +551,8 @@ module.exports = {
 				{
 					title: "Runaway",
 					youtube_link: "qUL1Ng3dj0I",
-					artist_id: 6,
-					album_id: 6,
+					artist_id: 2,
+					album_id: 2,
 					length: 220,
 					track_number: 5,
 					lyrics: `I remember when
