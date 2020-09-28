@@ -23,10 +23,10 @@ router.post("/", async (req, res) => {
 	const newArtist = req.body;
 	const artist = await Artist.create({
 		name: newArtist.name,
-		cover_img: newArtist.coverImg,
-		upload_at: new Date(),
-		created_at: new Date(),
-		updated_at: new Date()
+		coverImg: newArtist.coverImg,
+		uploadAt: new Date(),
+		createdAt: new Date(),
+		updatedAt: new Date()
 	});
 	return res.json(artist);
 });
@@ -41,6 +41,24 @@ router.post("/", async (req, res) => {
 		updatedAt: new Date()
 	});
 	return res.json(artist);
+});
+
+router.put("/:artistId", async (req, res) => {
+	const newArtist = req.body;
+	const artist = await Artist.update(
+		{
+			name: newArtist.name,
+			coverImg: newArtist.coverImg,
+			updatedAt: new Date()
+		},
+		{ where: { id: req.params.artistId } }
+	);
+	return res.json(artist);
+});
+
+router.delete("/:artistId", async (req, res) => {
+	const deletedArtist = Artist.destroy({ where: { id: req.params.artistId } });
+	return res.json(deletedArtist);
 });
 
 module.exports = router;
