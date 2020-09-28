@@ -8,7 +8,7 @@ function PlaylistCard(props) {
 			<Link to={`/playlist/${props.data.id}`}>
 				<img
 					className="cardImage-circle"
-					src={props.data.cover_img}
+					src={props.data.coverImg}
 					alt="artist image"
 				/>
 				<h4 className="cardTitle-circle">{props.data.name}</h4>

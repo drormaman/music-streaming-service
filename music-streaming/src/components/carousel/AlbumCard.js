@@ -7,11 +7,11 @@ function AlbumCard(props) {
 			<Link to={`/album/${props.data.id}`}>
 				<img
 					className="cardImage-rect"
-					src={props.data.cover_img}
+					src={props.data.coverImg}
 					alt="album image"
 				/>
 				<h4 className="cardTitle-rect">{props.data.name}</h4>
-				<span className="cardSub-rect">{props.data.artistName}</span>
+				<span className="cardSub-rect">{props.data.Artist.name}</span>
 			</Link>
 		</li>
 	);
