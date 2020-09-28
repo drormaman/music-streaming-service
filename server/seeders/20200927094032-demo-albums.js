@@ -14,21 +14,21 @@ module.exports = {
 		await queryInterface.bulkInsert("albums", [
 			{
 				name: "Who Killed Matt Maeson",
-				cover_img:
+				coverImg:
 					"https://img.discogs.com/UnsRjd2GUhB1eRUYWlO_88j_QI4=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15330990-1589839684-9187.jpeg.jpg",
-				artist_id: 1,
-				upload_at: new Date(),
-				created_at: new Date(),
-				updated_at: new Date()
+				artistId: 1,
+				uploadAt: new Date(),
+				createdAt: new Date(),
+				updatedAt: new Date()
 			},
 			{
 				name: "Exident",
-				cover_img:
+				coverImg:
 					"https://img.discogs.com/tM-r6AroNndPzY1xBJPwHfgtuLI=/600x435/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-6289096-1532255768-1265.jpeg.jpg",
-				artist_id: 2,
-				upload_at: new Date(),
-				created_at: new Date(),
-				updated_at: new Date()
+				artistId: 2,
+				uploadAt: new Date(),
+				createdAt: new Date(),
+				updatedAt: new Date()
 			}
 		]);
 	},

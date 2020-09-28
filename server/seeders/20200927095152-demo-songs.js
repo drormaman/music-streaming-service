@@ -16,11 +16,11 @@ module.exports = {
 			[
 				{
 					title: "Grave Digger",
-					youtube_link: "ImyqYYSSQIU",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "ImyqYYSSQIU",
+					artistId: 1,
+					albumId: 1,
 					length: 238,
-					track_number: 1,
+					trackNumber: 1,
 					lyrics: `I can't run to you, father
           I need love
           I can't talk to you, mother
@@ -56,17 +56,17 @@ module.exports = {
           How long will I bleed?
           Tell me if I run away
           How long will I bleed?`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Cringe",
-					youtube_link: "eoJtlPQzqkQ",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "eoJtlPQzqkQ",
+					artistId: 1,
+					albumId: 1,
 					length: 225,
-					track_number: 2,
+					trackNumber: 2,
 					lyrics: `Lover come over
           Look what I done
           I been alone so long
@@ -122,17 +122,17 @@ module.exports = {
           I said I saw you in the water (do I make you cringe?)
           I said I saw you in the water (do I make you cringe?)
           I said I saw you in the water (do I make you cringe?)`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Me And My Friends Are Lonely",
-					youtube_link: "UN0aiXcksu0",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "UN0aiXcksu0",
+					artistId: 1,
+					albumId: 1,
 					length: 180,
-					track_number: 3,
+					trackNumber: 3,
 					lyrics: `I can't open up to you
           Me and my friends are lonely
           I don't know what to do
@@ -163,17 +163,17 @@ module.exports = {
           I always figured I'd be the one to die alone
           I always figured I'd be the one to die alone
           I always figured that I'd be the one to die alone`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Straight Razor",
-					youtube_link: "-kujDa4D4EQ",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "-kujDa4D4EQ",
+					artistId: 1,
+					albumId: 1,
 					length: 262,
-					track_number: 4,
+					trackNumber: 4,
 					lyrics: `Hey Mr. Stargazer
           Give me a straight razor
           Don't let it all faze her
@@ -214,17 +214,17 @@ module.exports = {
           Spare you a joint paper
           Hey Mr. Stargazer
           Give me a straight razor`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Tribulation",
-					youtube_link: "E44rXf8696w",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "E44rXf8696w",
+					artistId: 1,
+					albumId: 1,
 					length: 203,
-					track_number: 5,
+					trackNumber: 5,
 					lyrics: `Darlin', can't you see
           I'm a broken man
           With addictive tendencies
@@ -281,17 +281,17 @@ module.exports = {
           Love you right
           Oh, and I don't ever think I can
           Ever learn how to love you right`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Twenty Twelve",
-					youtube_link: "oz8NDZ9ids4",
-					artist_id: 1,
-					album_id: 1,
+					youtubeLink: "oz8NDZ9ids4",
+					artistId: 1,
+					albumId: 1,
 					length: 174,
-					track_number: 6,
+					trackNumber: 6,
 					lyrics: `Maybe I'll stay right here
           Maybe I'll keep this mind
           Maybe I'll live in this moment forever
@@ -314,17 +314,17 @@ module.exports = {
           Could you help me
           Stop focusing on the particular
           Oh focusing on the particular`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Aura",
-					youtube_link: "1bGI3fwz40c",
-					artist_id: 2,
-					album_id: 2,
+					youtubeLink: "1bGI3fwz40c",
+					artistId: 2,
+					albumId: 2,
 					length: 179,
-					track_number: 2,
+					trackNumber: 2,
 					lyrics: `Oh, when we fuck
           Oh, when we fuck
           Oh, when we fuck
@@ -361,32 +361,32 @@ module.exports = {
           Well, I'm burning myself
           And I'm hurting myself
           When we fuck, oh, when we fuck`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Introducción",
-					youtube_link: "H03pQeneb5M",
-					artist_id: 2,
-					album_id: 2,
+					youtubeLink: "H03pQeneb5M",
+					artistId: 2,
+					albumId: 2,
 					length: 54,
-					track_number: 1,
+					trackNumber: 1,
 					lyrics: `I remember the time with you
           The good times, the bad times
           I'm sorry for what I'm about to say, my love
           "I love you", excuse me`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Never Go Back",
-					youtube_link: "lhGl9D514Bc",
-					artist_id: 2,
-					album_id: 2,
+					youtubeLink: "lhGl9D514Bc",
+					artistId: 2,
+					albumId: 2,
 					length: 176,
-					track_number: 3,
+					trackNumber: 3,
 					lyrics: `I never go back
           No, no, no
           I never go
@@ -472,17 +472,17 @@ module.exports = {
           No, no, no
           I never go
           I never go back`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "GFY",
-					youtube_link: "CIqiB9zSLmM",
-					artist_id: 2,
-					album_id: 2,
+					youtubeLink: "CIqiB9zSLmM",
+					artistId: 2,
+					albumId: 2,
 					length: 224,
-					track_number: 4,
+					trackNumber: 4,
 					lyrics: `Gotta think about it
           Gotta think about it
           Gotta think about it
@@ -544,17 +544,17 @@ module.exports = {
           Gotta think about it, baby
           Where do you belong if I gotta think about it?
           Gotta think about it`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				},
 				{
 					title: "Runaway",
-					youtube_link: "qUL1Ng3dj0I",
-					artist_id: 2,
-					album_id: 2,
+					youtubeLink: "qUL1Ng3dj0I",
+					artistId: 2,
+					albumId: 2,
 					length: 220,
-					track_number: 5,
+					trackNumber: 5,
 					lyrics: `I remember when
           I remember when you told me, baby
           Thoughts I've never had
@@ -594,9 +594,9 @@ module.exports = {
           Run, run, run away
           I don't wanna think about you, baby
           (No more, no more)`,
-					upload_at: new Date(),
-					created_at: new Date(),
-					updated_at: new Date()
+					uploadAt: new Date(),
+					createdAt: new Date(),
+					updatedAt: new Date()
 				}
 			],
 			{}

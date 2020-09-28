@@ -11,32 +11,32 @@ module.exports = {
 			title: {
 				type: Sequelize.STRING
 			},
-			youtube_link: {
+			youtubeLink: {
 				type: Sequelize.STRING
 			},
-			artist_id: {
+			artistId: {
 				type: Sequelize.INTEGER
 			},
-			album_id: {
+			albumId: {
 				type: Sequelize.INTEGER
 			},
 			length: {
 				type: Sequelize.INTEGER
 			},
-			track_number: {
+			trackNumber: {
 				type: Sequelize.INTEGER
 			},
 			lyrics: {
 				type: Sequelize.TEXT
 			},
-			upload_at: {
+			uploadAt: {
 				type: Sequelize.DATE
 			},
-			created_at: {
+			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE
 			},
-			updated_at: {
+			updatedAt: {
 				allowNull: false,
 				type: Sequelize.DATE
 			}

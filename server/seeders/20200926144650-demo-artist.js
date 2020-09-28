@@ -14,18 +14,18 @@ module.exports = {
 		await queryInterface.bulkInsert("artists", [
 			{
 				name: "Matt Meason",
-				cover_img:
+				coverImg:
 					"https://entertainermag.com/wp-content/uploads/2019/05/Matt-Maeson.jpg",
-				upload_at: new Date(),
-				created_at: new Date(),
-				updated_at: new Date()
+				uploadAt: new Date(),
+				createdAt: new Date(),
+				updatedAt: new Date()
 			},
 			{
 				name: "Dennis Lloyd",
-				cover_img: "https://i.ytimg.com/vi/GuLTb9cYHWE/maxresdefault.jpg",
-				upload_at: new Date(),
-				created_at: new Date(),
-				updated_at: new Date()
+				coverImg: "https://i.ytimg.com/vi/GuLTb9cYHWE/maxresdefault.jpg",
+				uploadAt: new Date(),
+				createdAt: new Date(),
+				updatedAt: new Date()
 			}
 		]);
 	},

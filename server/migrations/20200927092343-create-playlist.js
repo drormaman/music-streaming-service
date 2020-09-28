@@ -11,17 +11,17 @@ module.exports = {
 			name: {
 				type: Sequelize.STRING
 			},
-			cover_img: {
+			coverImg: {
 				type: Sequelize.TEXT
 			},
-			upload_at: {
+			uploadAt: {
 				type: Sequelize.DATE
 			},
-			created_at: {
+			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE
 			},
-			updated_at: {
+			updatedAt: {
 				allowNull: false,
 				type: Sequelize.DATE
 			}
