@@ -31,18 +31,6 @@ router.post("/", async (req, res) => {
 	return res.json(artist);
 });
 
-router.post("/", async (req, res) => {
-	const newArtist = req.body;
-	const artist = await Artist.create({
-		name: newArtist.name,
-		coverImg: newArtist.coverImg,
-		uploadAt: new Date(),
-		createdAt: new Date(),
-		updatedAt: new Date()
-	});
-	return res.json(artist);
-});
-
 router.put("/:artistId", async (req, res) => {
 	const newArtist = req.body;
 	const artist = await Artist.update(
