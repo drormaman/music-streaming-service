@@ -5,7 +5,10 @@ const { Song, Artist, Album } = require("../models");
 router.get("/:songId", async (req, res) => {
 	const song = await Song.findByPk(req.params.songId, {
 		include: [
-			{ model: Artist, attributes: ["name", "coverImg"] },
+			{
+				model: Artist,
+				attributes: [["name", "artistName"]]
+			},
 			{ model: Album, attributes: ["name"] }
 		],
 		raw: true
