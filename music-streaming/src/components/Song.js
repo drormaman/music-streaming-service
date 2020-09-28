@@ -65,19 +65,19 @@ function Song(props) {
 	}, [props.location]);
 
 	async function fetchData() {
-		const songResponse = await fetch(`/song/${props.match.params.id}`);
+		const songResponse = await fetch(`/api/song/${props.match.params.id}`);
 		const songData = await songResponse.json();
 		setSong(songData);
 
-		const relatedData = await fetch(`/${queryArr[0]}/${queryArr[1]}/songs`);
+		const relatedData = await fetch(`/api/${queryArr[0]}/${queryArr[1]}/songs`);
 		const relatedSongsArr = await relatedData.json();
 		setRelatesSongs(relatedSongsArr);
 		setIndex(relatedSongsArr.findIndex(song => song.id === songData.id));
 	}
 
 	function durationToString() {
-		const minutes = Math.floor(song.duration / 60);
-		const seconds = song.duration % 60;
+		const minutes = Math.floor(song.length / 60);
+		const seconds = song.length % 60;
 		return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
 	}
 
@@ -86,7 +86,7 @@ function Song(props) {
 			<YouTube
 				containerClassName={"videoPlayer"}
 				style={{ gridColumn: "1", gridRow: "1/3" }}
-				videoId={song.youtube_link}
+				videoId={song.youtubeLink}
 				onEnd={() => {
 					if (index + 1 === relatedSongs.length) {
 						props.history.push("/");
@@ -115,15 +115,15 @@ function Song(props) {
 
 				<span>
 					Artist:{" "}
-					<Link to={`/artist/${song.artist_id}`} style={{ color: "#cccccc" }}>
-						{song.artistName}
+					<Link to={`/artist/${song.artistId}`} style={{ color: "#cccccc" }}>
+						{song["Artist.name"]}
 					</Link>
 				</span>
 
 				<span>
 					Album:{" "}
-					<Link to={`/album/${song.album_id}`} style={{ color: "#cccccc" }}>
-						{song.albumName}
+					<Link to={`/album/${song.albumId}`} style={{ color: "#cccccc" }}>
+						{song["Album.name"]}
 					</Link>
 				</span>
 				<LyricsButton onClick={() => setShowLyrics(!showLyrics)}>

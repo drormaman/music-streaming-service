@@ -5,7 +5,7 @@ const { Song, Artist, Album, Playlist } = require("../models");
 router.use("/artist", require("./artist"));
 router.use("/album", require("./album"));
 router.use("/playlist", require("./playlist"));
-router.use("/songs", require("./song"));
+router.use("/song", require("./song"));
 
 router.get("/top_artists", async (req, res) => {
 	const topArtists = await Artist.findAll({ limit: 20 });
