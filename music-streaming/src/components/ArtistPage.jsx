@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SongInList from "./SongInList";
 import Carousel from "./carousel/Carousel";
+import { urlChangeEvent } from "../AnalyticsManager";
 
 const SongsList = styled.ul`
 	padding: 0;
@@ -39,6 +40,7 @@ function Artist(props) {
 
 	useEffect(() => {
 		fetchData();
+		urlChangeEvent();
 	}, []);
 
 	async function fetchData() {

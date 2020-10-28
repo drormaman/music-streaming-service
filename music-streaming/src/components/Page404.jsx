@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { urlChangeEvent } from "../AnalyticsManager";
 
 const StyledMain = styled.main`
 	text-align: center;
@@ -16,6 +17,9 @@ const YodaImage = styled.img`
 `;
 
 function Page404(props) {
+	useEffect(() => {
+		urlChangeEvent();
+	}, []);
 	return (
 		<StyledMain>
 			<Text>404 ERROR OCCURED HAS</Text>

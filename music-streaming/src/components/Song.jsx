@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SongInList from "./SongInList";
 import YouTube from "react-youtube";
+import { urlChangeEvent } from "../AnalyticsManager";
 
 const MainDiv = styled.main`
 	height: 100vh;
@@ -62,6 +63,7 @@ function Song(props) {
 
 	useEffect(() => {
 		fetchData();
+		urlChangeEvent();
 	}, [props.location]);
 
 	async function fetchData() {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SongInList from "./SongInList";
 import PlaylistHeader from "./PlaylistHeader";
+import { urlChangeEvent } from "../AnalyticsManager";
 
 const SongsList = styled.ul`
 	padding: 0;
@@ -14,7 +15,10 @@ const SongsList = styled.ul`
 function Album(props) {
 	const [album, setAlbum] = useState({});
 	const [songs, setSongs] = useState([]);
-	useEffect(() => fetchData(), []);
+	useEffect(() => {
+		fetchData();
+		urlChangeEvent();
+	}, []);
 	async function fetchData() {
 		const albumResponse = await fetch(`/album/${props.match.params.id}`);
 		const albumData = await albumResponse.json();

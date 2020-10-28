@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "./carousel/Carousel";
 import styled from "styled-components";
+import { urlChangeEvent } from "../AnalyticsManager";
 
 const Title = styled.h2`
 	color: white;
@@ -18,6 +19,7 @@ function Home() {
 		fetchArtists();
 		fetchAlbums();
 		fetchPlaylists();
+		urlChangeEvent();
 	}, []);
 
 	async function fetchSongs() {
