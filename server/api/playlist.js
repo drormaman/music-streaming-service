@@ -1,49 +1,18 @@
 const { Router } = require("express");
 const router = Router();
-const { Playlist } = require("../models");
+const { Playlist, Artist, Song } = require("../models");
 
-// GET request to /album/123 returns the album 123
-router.get("/:playlistId", async (req, res) => {
-	const playlist = await Playlist.findByPk(req.params.playlistId);
+// GET request to /artist/123 returns the artist 123
+router.get("/:id", async (req, res) => {
+	const playlist = await Playlist.findByPk(req.params.id);
 	return res.json(playlist);
 });
-
-router.get("/:playlistId/songs", async (req, res) => {
-	const playlist = await Playlist.findByPk(req.params.playlistId);
-	const songs = await playlist.getSongs();
-	return res.json(songs);
-});
-
-router.post("/", async (req, res) => {
-	const newPlaylist = req.body;
-	const playlist = await Playlist.create({
-		name: newPlaylist.name,
-		coverImg: newPlaylist.coverImg,
-		uploadAt: new Date(),
-		createdAt: new Date(),
-		updatedAt: new Date()
+router.get("/:id/songs", async (req, res) => {
+	const playlist = await Playlist.findOne({
+		where: { id: req.params.id },
+		include: { model: Song, include: Artist, through: { attributes: [] } }
 	});
 	return res.json(playlist);
-});
-
-router.put("/:playlistId", async (req, res) => {
-	const newPlaylist = req.body;
-	const playlist = await Playlist.update(
-		{
-			name: newPlaylist.name,
-			coverImg: newPlaylist.coverImg,
-			updatedAt: new Date()
-		},
-		{ where: { id: req.params.playlistId } }
-	);
-	return res.send(playlist);
-});
-
-router.delete("/:playlistId", async (req, res) => {
-	const deletedPlaylist = Playlist.destroy({
-		where: { id: req.params.playlistId }
-	});
-	return res.json(deletedPlaylist);
 });
 
 module.exports = router;

@@ -18,12 +18,14 @@ module.exports = (sequelize, DataTypes) => {
 	Playlist.init(
 		{
 			name: DataTypes.STRING,
-			coverImg: DataTypes.TEXT,
-			uploadAt: DataTypes.DATE
+			coverImg: { type: DataTypes.TEXT, field: "cover_img" },
+			uploadAt: { type: DataTypes.DATE, field: "upload_at" },
+			deletedAt: { type: DataTypes.DATE, field: "deleted_at" }
 		},
 		{
 			sequelize,
-			modelName: "Playlist"
+			modelName: "Playlist",
+			paranoid: true
 		}
 	);
 	return Playlist;

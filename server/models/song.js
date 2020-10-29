@@ -9,28 +9,30 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
-			this.belongsTo(models.Artist);
-			this.belongsTo(models.Album);
+			this.belongsTo(models.Artist, { foreignKey: "artistId" });
+			this.belongsTo(models.Album, { foreignKey: "albumId" });
 			this.belongsToMany(models.Playlist, {
 				through: models.SongInPlaylist,
-				uniqueKey: "songId"
+				uniqueKey: "songIds"
 			});
 		}
 	}
 	Song.init(
 		{
 			title: DataTypes.STRING,
-			youtubeLink: DataTypes.STRING,
-			artistId: DataTypes.INTEGER,
-			albumId: DataTypes.INTEGER,
+			youtubeLink: { type: DataTypes.STRING, field: "youtube_link" },
+			artistId: { type: DataTypes.INTEGER, field: "artist_id" },
+			albumId: { type: DataTypes.INTEGER, field: "album_id" },
 			length: DataTypes.INTEGER,
-			trackNumber: DataTypes.INTEGER,
+			trackNumber: { type: DataTypes.INTEGER, field: "track_number" },
 			lyrics: DataTypes.TEXT,
-			uploadAt: DataTypes.DATE
+			uploadAt: { type: DataTypes.DATE, field: "upload_at" },
+			deletedAt: { type: DataTypes.DATE, field: "deleted_at" }
 		},
 		{
 			sequelize,
-			modelName: "Song"
+			modelName: "Song",
+			paranoid: true
 		}
 	);
 	return Song;

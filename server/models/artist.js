@@ -16,12 +16,14 @@ module.exports = (sequelize, DataTypes) => {
 	Artist.init(
 		{
 			name: DataTypes.STRING,
-			coverImg: DataTypes.TEXT,
-			uploadAt: DataTypes.DATE
+			coverImg: { type: DataTypes.TEXT, field: "cover_img" },
+			uploadAt: { type: DataTypes.DATE, field: "upload_at" },
+			deletedAt: { type: DataTypes.DATE, field: "deleted_at" }
 		},
 		{
 			sequelize,
-			modelName: "Artist"
+			modelName: "Artist",
+			paranoid: true
 		}
 	);
 	return Artist;

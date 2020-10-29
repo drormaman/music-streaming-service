@@ -9,20 +9,22 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
-			this.belongsTo(models.Artist);
+			this.belongsTo(models.Artist, { foreignKey: "artistId" });
 			this.hasMany(models.Song, { foreignKey: "albumId" });
 		}
 	}
 	Album.init(
 		{
 			name: DataTypes.STRING,
-			coverImg: DataTypes.TEXT,
-			artistId: DataTypes.INTEGER,
-			uploadAt: DataTypes.DATE
+			coverImg: { type: DataTypes.TEXT, field: "cover_img" },
+			artistId: { type: DataTypes.INTEGER, field: "artist_id" },
+			uploadAt: { type: DataTypes.DATE, field: "upload_at" },
+			deletedAt: { type: DataTypes.DATE, field: "deleted_at" }
 		},
 		{
 			sequelize,
-			modelName: "Album"
+			modelName: "Album",
+			paranoid: true
 		}
 	);
 	return Album;
