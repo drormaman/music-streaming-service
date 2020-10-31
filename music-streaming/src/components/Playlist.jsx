@@ -20,14 +20,12 @@ function Playlist(props) {
 	}, []);
 
 	async function fetchData() {
-		const playlistResponse = await fetch(`/playlist/${props.match.params.id}`);
-		const playlistData = await playlistResponse.json();
-		setPlaylist(playlistData);
-		const songsResponse = await fetch(
-			`/playlist/${props.match.params.id}/songs`
+		const playlistResponse = await fetch(
+			`/api/playlist/${props.match.params.id}/songs`
 		);
-		const songsData = await songsResponse.json();
-		setSongs(songsData);
+		const playlistData = await playlistResponse.json();
+		console.log(playlistData);
+		setPlaylist(playlistData);
 	}
 
 	return (
@@ -35,7 +33,7 @@ function Playlist(props) {
 			<PlaylistHeader data={playlist} type="playlist" songs={songs} />
 
 			<SongsList>
-				{songs.map((song, i) => {
+				{playlist.Songs?.map((song, i) => {
 					return (
 						<Link to={`/song/${song.id}?playlist=${playlist.id}`}>
 							<SongInList

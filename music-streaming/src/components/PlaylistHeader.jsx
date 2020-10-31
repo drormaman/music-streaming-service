@@ -38,44 +38,47 @@ const PlayBtn = styled.button`
 	justify-content: center;
 `;
 
-function PlaylistHeader(props) {
-	console.log(props);
+function PlaylistHeader({ artist, data, songs, type }) {
+	console.log(data);
+	console.log(songs);
+	console.log(type);
 	function timeToString(time) {
 		const date = new Date(Date.parse(time));
 		return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
 	}
 
 	return (
-		<Header>
-			<PlaylistImage src={props.data.coverImg} alt="playlist image" />
-			<div
-				style={{
-					paddingLeft: "36px",
-					height: "200px",
-					display: "flex",
-					flexDirection: "column"
-				}}>
-				<h2 style={{ color: "#fff", margin: "0" }}>{props.data.name}</h2>
-				{props.type === "playlist" ? (
-					<span>Created at: {timeToString(props.data.createdAt)}</span>
-				) : (
-					<>
-						<ArtistImage src={props.data.Artist.image} />
-						<span>{props.artist.name}</span>
-					</>
-				)}
-				<span>{props.songs.length} songs</span>
-				<PlayBtn>
-					<Link
-						to={`/song/${
-							props.songs[0] ? props.songs[0].id : undefined
-						}?playlist=${props.data.id}`}>
-						<FaPlay style={{ paddingRight: "6px" }} />
-						Play
-					</Link>
-				</PlayBtn>
-			</div>
-		</Header>
+		data && (
+			<Header>
+				<PlaylistImage src={data.coverImg} alt="playlist image" />
+				<div
+					style={{
+						paddingLeft: "36px",
+						height: "200px",
+						display: "flex",
+						flexDirection: "column"
+					}}>
+					<h2 style={{ color: "#fff", margin: "0" }}>{data.name}</h2>
+					{type === "playlist" ? (
+						<span>Created at: {timeToString(data.createdAt)}</span>
+					) : (
+						<>
+							<ArtistImage src={data.Artist?.coverImg} />
+							<span>{data.Artist?.name}</span>
+						</>
+					)}
+					<span>{songs?.length} songs</span>
+					<PlayBtn>
+						{songs && (
+							<Link to={`/song/${songs[0] && songs[0].id}?playlist=${data.id}`}>
+								<FaPlay style={{ paddingRight: "6px" }} />
+								Play
+							</Link>
+						)}
+					</PlayBtn>
+				</div>
+			</Header>
+		)
 	);
 }
 

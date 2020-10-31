@@ -11,13 +11,12 @@ const SongsList = styled.ul`
 	width: 80%;
 `;
 
-function Album(props) {
+function Album({ history, location, match }) {
 	const [album, setAlbum] = useState({});
 	useEffect(() => fetchData(), []);
+
 	async function fetchData() {
-		const albumResponse = await fetch(
-			`/api/album/${props.match.params.id}/songs`
-		);
+		const albumResponse = await fetch(`/api/album/${match.params.id}/songs`);
 		const albumData = await albumResponse.json();
 		console.log(albumData);
 		setAlbum(albumData);

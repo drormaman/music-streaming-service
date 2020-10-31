@@ -31,7 +31,7 @@ function SongInList(props) {
 				}}>
 				{props.song.title}
 			</span>
-			<span>{props.song.artistName}</span>
+			<span>{props.song.Artist.name}</span>
 			<span
 				style={{
 					marginLeft: "auto"
