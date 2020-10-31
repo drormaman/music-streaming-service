@@ -42,26 +42,21 @@ function Artist(props) {
 	}, []);
 
 	async function fetchData() {
-		const artistResponse = await fetch(`/artist/${props.match.params.id}`);
-		const artistData = await artistResponse.json();
-		setArtist(artistData);
-		const songsResponse = await fetch(`/artist/${props.match.params.id}/songs`);
-		const songsData = await songsResponse.json();
-		setSongs(songsData);
-		const albumsResponse = await fetch(
-			`/artist/${props.match.params.id}/albums`
+		const artistResponse = await fetch(
+			`/api/artist/${props.match.params.id}/albums`
 		);
-		const albumsData = await albumsResponse.json();
-		setAlbums(albumsData);
+		const artistData = await artistResponse.json();
+		console.log(artistData);
+		setArtist(artistData);
 	}
 
 	return (
 		<main>
 			<Header
 				style={
-					artist.cover_img
+					artist.coverImg
 						? {
-								backgroundImage: `url(${artist.cover_img})`
+								backgroundImage: `url(${artist.coverImg})`
 						  }
 						: {}
 				}>
@@ -70,14 +65,14 @@ function Artist(props) {
 			<div style={{ paddingLeft: "36px" }}>
 				<h2 style={{ color: "white" }}>top songs</h2>
 				<SongsList>
-					{songs.slice(0, 5).map((song, i) => (
+					{artist.Songs?.map((song, i) => (
 						<Link to={`/song/${song.id}?artist=${artist.id}`} key={song.id}>
 							<SongInList song={song} index={i + 1} type="artist" />
 						</Link>
 					))}
 				</SongsList>
 				<h2 style={{ color: "white" }}>albums</h2>
-				<Carousel data={albums} type="albums" />
+				{artist.Albums && <Carousel data={artist.Albums} type="albums" />}
 			</div>
 		</main>
 	);

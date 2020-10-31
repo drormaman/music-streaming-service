@@ -39,6 +39,7 @@ const PlayBtn = styled.button`
 `;
 
 function PlaylistHeader(props) {
+	console.log(props);
 	function timeToString(time) {
 		const date = new Date(Date.parse(time));
 		return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
@@ -46,7 +47,7 @@ function PlaylistHeader(props) {
 
 	return (
 		<Header>
-			<PlaylistImage src={props.data.cover_img} alt="playlist image" />
+			<PlaylistImage src={props.data.coverImg} alt="playlist image" />
 			<div
 				style={{
 					paddingLeft: "36px",
@@ -56,10 +57,10 @@ function PlaylistHeader(props) {
 				}}>
 				<h2 style={{ color: "#fff", margin: "0" }}>{props.data.name}</h2>
 				{props.type === "playlist" ? (
-					<span>Created at: {timeToString(props.data.created_at)}</span>
+					<span>Created at: {timeToString(props.data.createdAt)}</span>
 				) : (
 					<>
-						<ArtistImage src={props.artist.image} />
+						<ArtistImage src={props.data.Artist.image} />
 						<span>{props.artist.name}</span>
 					</>
 				)}

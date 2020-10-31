@@ -13,9 +13,9 @@ const SongRow = styled.li`
 `;
 
 function SongInList(props) {
-	function durationToString() {
-		const minutes = Math.floor(props.song.duration / 60);
-		const seconds = props.song.duration % 60;
+	function durationToString(length) {
+		const minutes = Math.floor(length / 60);
+		const seconds = length % 60;
 		return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
 	}
 
@@ -36,7 +36,7 @@ function SongInList(props) {
 				style={{
 					marginLeft: "auto"
 				}}>
-				{durationToString(props.song.duration)}
+				{durationToString(props.song.length)}
 			</span>
 		</SongRow>
 	);

@@ -13,15 +13,14 @@ const SongsList = styled.ul`
 
 function Album(props) {
 	const [album, setAlbum] = useState({});
-	const [songs, setSongs] = useState([]);
 	useEffect(() => fetchData(), []);
 	async function fetchData() {
-		const albumResponse = await fetch(`/album/${props.match.params.id}`);
+		const albumResponse = await fetch(
+			`/api/album/${props.match.params.id}/songs`
+		);
 		const albumData = await albumResponse.json();
+		console.log(albumData);
 		setAlbum(albumData);
-		const songsResponse = await fetch(`/album/${props.match.params.id}/songs`);
-		const songsData = await songsResponse.json();
-		setSongs(songsData);
 	}
 
 	return (
@@ -29,12 +28,12 @@ function Album(props) {
 			<PlaylistHeader
 				data={album}
 				type="album"
-				songs={songs}
+				songs={album.Songs}
 				artist={{ name: album.artistName, image: album.artistImage }}
 			/>
 
 			<SongsList>
-				{songs.map(song => (
+				{album.Songs?.map(song => (
 					<Link to={`/song/${song.id}?album=${album.id}`} key={song.id}>
 						<SongInList song={song} index={song.track_number} type="album" />
 					</Link>
